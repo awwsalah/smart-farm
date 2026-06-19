@@ -1,17 +1,35 @@
-# app
+# Beeralay App
 
-A new Flutter project.
+**Beeralay** is an offline-first Flutter mobile app for Somali farmers. It helps users browse farming products, read local articles and news, check weather, and place marketplace orders — all with a Somali (Af-Soomaali) interface.
 
-## Getting Started
+## Features
 
-This project is a starting point for a Flutter application.
+| Tab | Somali name | Description |
+|-----|-------------|-------------|
+| Home | Bogga Hore | Weather card, daily tips, popular products, support link |
+| Resources | Khayraadka | Farming articles by category |
+| News | Wararka | Local farming news |
+| Marketplace | Suuqa | Product grid, cart, and order summary (phone/WhatsApp contact) |
 
-A few resources to get you started if this is your first Flutter project:
+### Offline-first
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+- Products, articles, news, and tips are stored locally in **SQLite**, seeded from bundled JSON on first launch.
+- Images are bundled under `assets/images/`.
+- Weather is the **only online feature** (Open-Meteo). Results are cached for offline viewing.
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# smart-farm
+### Not included (by design)
+
+- No login or user accounts
+- No Firebase or cloud database
+- No GPS / location permissions (weather uses preset Somali regions)
+
+## Tech stack
+
+- **Flutter** (Android + iOS)
+- **provider** — state management
+- **sqflite** — local database
+- **http** — weather API only
+- **flutter_animate** / **shimmer** — UI motion and loading states
+- **url_launcher** — seller contact from order summary
+
+## Project structure
