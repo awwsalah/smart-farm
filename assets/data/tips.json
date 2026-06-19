@@ -1,0 +1,44 @@
+
+[
+  {
+    "id": 1,
+    "text": "Beerista samee subaxda hore ama fiidkii, si dhirtu uga badbaado kulaylka qorraxda.",
+    "category": "guud"
+  },
+  {
+    "id": 2,
+    "text": "Waraabinta dhibic-dhibicdu waxay kaa caawisaa in biyo badan aanay khasaarin.",
+    "category": "waraabin"
+  },
+  {
+    "id": 3,
+    "text": "Dalagyada beerta sannad walba beddel, si carradu u nasato cayayaankuna u yaraado.",
+    "category": "dalag"
+  },
+  {
+    "id": 4,
+    "text": "Haramaha iyo haraaga dalagga ka samee compost; ha gubin, waa bacrimin dabiici ah oo bilaash ah.",
+    "category": "bacrimin"
+  },
+  {
+    "id": 5,
+    "text": "Maalin kasta eeg hoosta caleemaha, si aad cayayaanka goor hore u ogaato.",
+    "category": "cayayaan"
+  },
+  {
+    "id": 6,
+    "text": "Carrada biyo sii markaad bacrimin ku darto, si aanay xididdada dalaggu u guban.",
+    "category": "bacrimin"
+  },
+  {
+    "id": 7,
+    "text": "Biyaha kaydso xilliga roobka, si aad uga faa’iidaysato marka Jiilaalku yimaaddo.",
+    "category": "waraabin"
+  },
+  {
+    "id": 8,
+    "text": "La soco saadaasha cimilada inta aanad beerin, si aad roobka si fiican uga faa’iidaysato.",
+    "category": "xilliyo"
+  }
+]
+

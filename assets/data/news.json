@@ -1,0 +1,52 @@
+
+[
+  {
+    "id": 1,
+    "title": "Roobab Fiican Oo Ka Da’ay Gobollada Qaar",
+    "summary": "Roobabkii Gu’ga ayaa si fiican uga da’ay gobollo badan, taasina waxay rajo fiican siisay beeralayda doonaysa inay sannadkan bilaabaan beeris ballaadhan.",
+    "source": "Wararka Beeralayda",
+    "image_asset": "assets/images/news/roob.jpg",
+    "published_at": "2026-06-14"
+  },
+  {
+    "id": 2,
+    "title": "Tababar Cusub Oo Loo Furay Beeralayda Dhalinyarada ah",
+    "summary": "Tababar ku saabsan farsamooyinka casriga ah ee beeraha ayaa la bilaabay, si dhalinyarada beeralayda ah looga caawiyo kordhinta wax-soo-saarka iyo yaraynta khasaaraha.",
+    "source": "Wargeyska Beeraha",
+    "image_asset": "assets/images/news/tababar.jpg",
+    "published_at": "2026-06-12"
+  },
+  {
+    "id": 3,
+    "title": "Qiimaha Hadhuudhka Oo Kor U Kacay Suuqyada",
+    "summary": "Qiimaha hadhuudhka ayaa kor uga kacay suuqyada gudaha, taasina waxay faa’iido u noqotay beeralayda haysata kayd dalag oo ay iib geeyaan.",
+    "source": "Suuqa Beeraha",
+    "image_asset": "assets/images/news/suuq.jpg",
+    "published_at": "2026-06-10"
+  },
+  {
+    "id": 4,
+    "title": "Digniin: Kooxo Ayax Ah Oo Laga Arkay Waqooyiga",
+    "summary": "Khubarada beeraha ayaa beeralayda ugu baaqay inay feejignaadaan, kadib markii qaybo waqooyi ah laga arkay kooxo ayax ah. Waxa kale oo lagu boorriyey inay si degdeg ah u wargeliyaan xafiisyada deegaanka.",
+    "source": "Wararka Beeralayda",
+    "image_asset": "assets/images/news/ayax.jpg",
+    "published_at": "2026-06-08"
+  },
+  {
+    "id": 5,
+    "title": "Mashruuc Waraabin Ah Oo Cusub Oo Gobolka Ka Bilaabmay",
+    "summary": "Mashruuc lagu hagaajinayo nidaamyada waraabinta ayaa la bilaabay, si beeralayda looga caawiyo xilliyada biyo-yaraanta, isla markaana loo yareeyo khasaaraha biyaha.",
+    "source": "Wargeyska Horumarka",
+    "image_asset": "assets/images/news/mashruuc.jpg",
+    "published_at": "2026-06-05"
+  },
+  {
+    "id": 6,
+    "title": "Beeralayda Oo Lagu Dhiirrigeliyey Bacriminta Dabiiciga ah",
+    "summary": "Khubaro beereed ayaa beeralayda kula taliyey inay isticmaalaan bacrimin dabiici ah, si loo ilaaliyo caafimaadka carrada, loona yareeyo kharashka bacriminta.",
+    "source": "Wararka Beeralayda",
+    "image_asset": "assets/images/news/bacrin_news.jpg",
+    "published_at": "2026-06-02"
+  }
+]
+

@@ -1,0 +1,84 @@
+
+[
+  {
+    "id": 1,
+    "title": "Sida Hadhuudhka Si Fiican Loo Beero",
+    "category": "dalag",
+    "body": "Hadhuudhku waa dalag aad looga beerto dhulkeena, gaar ahaan meelaha roobka iyo waraabintu ka caawiyaan. Si aad wax-soo-saar fiican u hesho: (1) Dooro carro biyo haynaysa oo aan aad u ciid badnayn. (2) Iniino hadhuudhka ku rid qoto dhan 3 ilaa 5cm. (3) Safafka kala fogee si dhirtu u hesho hawo iyo iftiin fiican. (4) Haramaha iyo cawska ka nadiifi beerta, waayo waxay dalagga kala tartamaan nafaqada. Bilowga koritaanka, hadhuudhku wuxuu u baahan yahay roob ama waraabin joogto ah.",
+    "image_asset": "assets/images/articles/hadhuudh_beerid.jpg",
+    "created_at": "2026-06-01"
+  },
+  {
+    "id": 2,
+    "title": "Daryeelka Galleyda Marka Ay Korayso",
+    "category": "dalag",
+    "body": "Galleydu waxay u baahan tahay biyo iyo nafaqo joogto ah. Marka ay gaadho qiyaastii 30cm, ku dar bacrimin ku habboon si ay si fiican u xoogaysato. Hubi in carradu qoyan tahay, laakiin biyuhu aanay ku fadhiisan xididdada, waayo taasi waxay keeni kartaa qudhun. Haddii aad aragto caleemo xanuunsan ama midabkoodu is beddelay, ka saar si aanu cudurku ugu faafin geedka intiisa kale.",
+    "image_asset": "assets/images/articles/galley_daryeel.jpg",
+    "created_at": "2026-06-03"
+  },
+  {
+    "id": 3,
+    "title": "Sida Cayayaanka Dalagga Looga Hortago",
+    "category": "cayayaan",
+    "body": "Cayayaanku wuxuu dhaawac weyn u geysan karaa dalagga haddii aan goor hore laga hortagin. Talooyin muhiim ah: (1) Maalin kasta eeg caleemaha, gaar ahaan hoosta caleenta oo cayayaanku ku dhuuman karo. (2) Marka hore isku day xal dabiici ah sida saliid neem ah, ka hor inta aanad isticmaalin sun kiimiko ah. (3) Haddii aad sun isticmaasho, raac tilmaamaha ku qoran dhalada, xidho gacmo-gashi iyo af-xidh. (4) Ha beerin hal dalag oo keliya mar kasta; dalagyo kala duwan ayaa yareeya faafitaanka cayayaanka.",
+    "image_asset": "assets/images/articles/cayayaan.jpg",
+    "created_at": "2026-06-05"
+  },
+  {
+    "id": 4,
+    "title": "Xakamaynta Ayaxa Beeraha",
+    "category": "cayayaan",
+    "body": "Ayaxu si dhakhso ah ayuu u baabi’in karaa beer dhan haddii aan degdeg wax looga qaban. Haddii aad aragto kooxo yaryar oo ayax ah, la xidhiidh xafiiska beeraha ee deegaankaaga iyo beeralayda kugu dhow, si wadajir looga hortago. Subaxda hore ayaa ugu fiican in wax laga qabto, sababtoo ah ayaxu markaas wuu qaboobaa oo dhaqdhaqaaqiisu wuu yar yahay.",
+    "image_asset": "assets/images/articles/dhuxul.jpg",
+    "created_at": "2026-06-06"
+  },
+  {
+    "id": 5,
+    "title": "Hababka Waraabinta Biyaha Kaydiya",
+    "category": "waraabin",
+    "body": "Biyuhu meelaha badan ee dhulkeena way ku yar yihiin, sidaa darteed waraabin nidaamsan ayaa muhiim ah. Waraabinta dhibic-dhibicdu waa hab fiican, waayo biyaha waxay si toos ah u gaadhsiisaa xididdada geedka, khasaaraha biyahana way yaraysaa. Waxaa fiican in beerta la waraabiyo subaxda hore ama fiidkii, si biyuhu aanay qorraxda ugu lumin.",
+    "image_asset": "assets/images/articles/waraab.jpg",
+    "created_at": "2026-06-08"
+  },
+  {
+    "id": 6,
+    "title": "Sida Biyaha Roobka Loo Kaydsado",
+    "category": "waraabin",
+    "body": "Xilliga roobka, samee haan, berked yar ama meel biyo lagu kaydiyo si aad uga faa’iidaysato marka abaartu timaaddo. Kaydka biyaha dabool si aanay biyuhu si fudud u uumi-bixin ama wasakh u gelin. Haddii beertu yar tahay, waxaad isticmaali kartaa matoor yar ama nidaam biyuhu iskood ugu socdaan si waraabintu u fududaato.",
+    "image_asset": "assets/images/articles/biyo_kayd.jpg",
+    "created_at": "2026-06-09"
+  },
+  {
+    "id": 7,
+    "title": "Hagaha Bacriminta: Goorma Ayaa La Isticmaalaa?",
+    "category": "bacrimin",
+    "body": "Bacrimintu waxay kordhisaa koritaanka iyo wax-soo-saarka dalagga, laakiin haddii laga badiyo way dhaawici kartaa geedka. Ka hor inta aanad beerin, carrada ku dar bacrimin dabiici ah sida digo si carradu u noqoto mid nafaqo leh. Marka dalaggu bilaabo koritaanka, si tartiib ah ugu dar bacrimin nitrogen leh sida Urea. Mar kasta oo aad bacrimin isticmaasho, carrada biyo sii si aanay bacrimintu u gubin xididdada geedka.",
+    "image_asset": "assets/images/articles/bacrin.jpg",
+    "created_at": "2026-06-10"
+  },
+  {
+    "id": 8,
+    "title": "Caafimaadka Carrada Iyo Bacriminta Dabiiciga ah",
+    "category": "bacrimin",
+    "body": "Carro caafimaad qabtaa waa saldhigga dalag fiican. Bacriminta dabiiciga ah sida digo iyo compost waxay carrada ku kordhisaa nafaqo, waxayna ka caawisaa inay biyaha si fiican u hayso. Haramaha iyo haraaga dhirta ha gubin; haddii aad awooddo, ka samee compost si ay dib ugu nafaqeeyaan carrada.",
+    "image_asset": "assets/images/articles/carro.jpg",
+    "created_at": "2026-06-11"
+  },
+  {
+    "id": 9,
+    "title": "Xilliyada Beeraha Ee Somaliland",
+    "category": "xilliyo",
+    "body": "Dhulkeenu wuxuu leeyahay xilliyo beeralaydu aad ula socdaan: Gu’ga oo ah xilliga roobka weyn, Dayrta oo ah roobka labaad, Xagaaga oo dabayl iyo kulayl yeelan kara, iyo Jiilaalka oo inta badan qalalan. Beeralaydu waxay inta badan bilaabaan diyaarinta beerta ka hor roobka, si marka roobku da’o dalaggu uga faa’iidaysto biyaha ugu horreeya.",
+    "image_asset": "assets/images/articles/xilliyo.jpg",
+    "created_at": "2026-06-12"
+  },
+  {
+    "id": 10,
+    "title": "Maxaa La Beeraa Xilliga Dayrta?",
+    "category": "xilliyo",
+    "body": "Xilliga Dayrtu waa fursad fiican oo lagu beeri karo dalagyo dhaqso u baxa sida digirta, sisinka iyo khudaarta qaarkeed. Waxaa fiican in iniinaha la beero marka roobka hore da’o, si dalaggu u helo waqti uu ku koro ka hor inta aan biyuhu yaraan. La soco saadaasha cimilada deegaankaaga, gaar ahaan haddii aad ku tiirsan tahay roobka.",
+    "image_asset": "assets/images/articles/deyr.jpg",
+    "created_at": "2026-06-13"
+  }
+]
+

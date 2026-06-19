@@ -1,0 +1,133 @@
+
+[
+  {
+    "id": 1,
+    "name": "Iniino Hadhuudh",
+    "category": "iniino",
+    "price": 4.50,
+    "currency": "USD",
+    "description": "Iniino hadhuudh oo tayo fiican leh, kuna habboon dhulka Somaliland. Waxay si fiican u baxaan xilliga Gu’ga iyo Dayrta, gaar ahaan marka roobku si wacan u da’o. 1kg.",
+    "image_asset": "assets/images/products/hadhuudh.jpg",
+    "in_stock": 1
+  },
+  {
+    "id": 2,
+    "name": "Iniino Galley",
+    "category": "iniino",
+    "price": 5.00,
+    "currency": "USD",
+    "description": "Iniino galley oo dhaqso u baxa, wax-soo-saarkooduna fiican yahay haddii waraabinta iyo roobku joogto yihiin. Ku habboon beeraha yaryar iyo kuwa dhexe. 1kg.",
+    "image_asset": "assets/images/products/galley.jpg",
+    "in_stock": 1
+  },
+  {
+    "id": 3,
+    "name": "Iniino Sisin",
+    "category": "iniino",
+    "price": 6.00,
+    "currency": "USD",
+    "description": "Iniino sisin oo tayo leh, kuna fiican beerashada ganacsiga iyo saliidda. Waxay u adkaysataa kulaylka iyo biyo-yaraanta fudud. 1kg.",
+    "image_asset": "assets/images/products/sisin.jpg",
+    "in_stock": 1
+  },
+  {
+    "id": 4,
+    "name": "Iniino Digir",
+    "category": "iniino",
+    "price": 3.75,
+    "currency": "USD",
+    "description": "Iniino digir oo carrada nafaqo u kordhiya, si fiicana loola beeri karo dalagyada kale. Ku habboon beeralayda raba dalag fudud oo dhaqso u baxa. 1kg.",
+    "image_asset": "assets/images/products/digir.jpg",
+    "in_stock": 1
+  },
+  {
+    "id": 5,
+    "name": "Yaambo Beereed",
+    "category": "qalab",
+    "price": 8.00,
+    "currency": "USD",
+    "description": "Yaambo bir adag ah oo loogu talagalay qodista, ciid-rogista iyo nadiifinta beerta. Waa qalab ku fiican shaqada maalinlaha ah ee beeralayda.",
+    "image_asset": "assets/images/products/yaambo.jpg",
+    "in_stock": 1
+  },
+  {
+    "id": 6,
+    "name": "Manjo Goyn",
+    "category": "qalab",
+    "price": 6.50,
+    "currency": "USD",
+    "description": "Manjo af fiican leh oo lagu gooyo cawska, laamaha yaryar iyo dalagga marka la gurayo. Way fududahay in lagu shaqeeyo.",
+    "image_asset": "assets/images/products/manjo.jpg",
+    "in_stock": 1
+  },
+  {
+    "id": 7,
+    "name": "Majarafad",
+    "category": "qalab",
+    "price": 7.25,
+    "currency": "USD",
+    "description": "Majarafad adag oo ku habboon qodista, ciid-qaadista iyo diyaarinta meelaha waraabintu marayso. Ku fiican beero yaryar iyo shaqada guriga.",
+    "image_asset": "assets/images/products/majarafad.jpg",
+    "in_stock": 0
+  },
+  {
+    "id": 8,
+    "name": "Bacrimin NPK",
+    "category": "bacrimin",
+    "price": 12.00,
+    "currency": "USD",
+    "description": "Bacrimin NPK ah oo isku-dhafan, kana caawiya dalagga inuu si fiican u koro una yeesho xidid iyo caleen xooggan. Joonyad 5kg ah.",
+    "image_asset": "assets/images/products/npk.jpg",
+    "in_stock": 1
+  },
+  {
+    "id": 9,
+    "name": "Bacrimin Urea",
+    "category": "bacrimin",
+    "price": 10.50,
+    "currency": "USD",
+    "description": "Bacrimin Urea ah oo dalagga ka caawiya cagaar iyo koriin fiican. Waxay si gaar ah ugu fiican tahay marka dalaggu bilowga koritaanka ku jiro. Joonyad 5kg ah.",
+    "image_asset": "assets/images/products/urea.jpg",
+    "in_stock": 1
+  },
+  {
+    "id": 10,
+    "name": "Bacrimin Dabiici ah",
+    "category": "bacrimin",
+    "price": 7.00,
+    "currency": "USD",
+    "description": "Bacrimin dabiici ah oo ka samaysan digo iyo haraaga dhirta. Waxay carrada ka dhigtaa mid nafaqo fiican leh oo dalaggu si wacan uga bixi karo. 5kg.",
+    "image_asset": "assets/images/products/bacrin_dabiici.jpg",
+    "in_stock": 1
+  },
+  {
+    "id": 11,
+    "name": "Sun Cayayaan",
+    "category": "sun",
+    "price": 9.00,
+    "currency": "USD",
+    "description": "Sun loogu talagalay cayayaanka waxyeelleeya caleemaha iyo dalagga. Si taxaddar leh u isticmaal, raacna tilmaamaha ku qoran dhalada. 500ml.",
+    "image_asset": "assets/images/products/sun_cayayaan.jpg",
+    "in_stock": 1
+  },
+  {
+    "id": 12,
+    "name": "Tuubo Waraabin",
+    "category": "waraabin",
+    "price": 15.00,
+    "currency": "USD",
+    "description": "Tuubo waraabin oo dabacsan, dhererkeeduna yahay 20m. Waxay ku habboon tahay beeraha yaryar, jardiinooyinka iyo waraabinta fudud.",
+    "image_asset": "assets/images/products/tuubo.jpg",
+    "in_stock": 1
+  },
+  {
+    "id": 13,
+    "name": "Qalabka Waraabinta Dhibic-dhibic",
+    "category": "waraabin",
+    "price": 28.00,
+    "currency": "USD",
+    "description": "Qalab waraabin dhibic-dhibic ah oo biyaha yareeya, dalaggana si tartiib ah u gaadhsiiya biyaha. Wuxuu ku fiican yahay xilliyada biyo-yaraanta. ",
+    "image_asset": "assets/images/products/drip_kit.jpg",
+    "in_stock": 1
+  }
+]
