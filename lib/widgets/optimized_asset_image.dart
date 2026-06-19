@@ -22,12 +22,12 @@ class OptimizedAssetImage extends StatelessWidget {
     int? cacheWidth;
     int? cacheHeight;
 
-    if (width != null) {
-      cacheWidth = (width! * dpr).round();
-    }
-    if (height != null) {
-      cacheHeight = (height! * dpr).round();
-    }
+    if (width != null && width!.isFinite) {
+  cacheWidth = (width! * dpr).round();
+}
+if (height != null && height!.isFinite) {
+  cacheHeight = (height! * dpr).round();
+}
 
     return Image.asset(
       assetPath,
