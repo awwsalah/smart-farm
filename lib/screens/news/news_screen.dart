@@ -1,4 +1,5 @@
 import 'package:app/config/app_strings.dart';
+import 'package:app/config/app_theme.dart';
 import 'package:app/data/repositories/news_repository.dart';
 import 'package:app/models/news_item.dart';
 import 'package:app/screens/news/news_detail_screen.dart';
@@ -50,16 +51,16 @@ class _NewsScreenState extends State<NewsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(AppStrings.navNews),
-      ),
+      backgroundColor: Colors.transparent,
+      appBar: AppTheme.gradientAppBar(title: AppStrings.navNews),
       body: RefreshIndicator(
         onRefresh: _refresh,
+        color: AppColors.primary,
         child: FutureBuilder<List<NewsItem>>(
           future: _newsFuture,
           builder: (context, snapshot) {
             if (snapshot.connectionState == ConnectionState.waiting) {
-              return _LoadingList();
+              return const _LoadingList();
             }
 
             if (snapshot.hasError) {
@@ -111,6 +112,8 @@ class _NewsScreenState extends State<NewsScreen> {
 }
 
 class _LoadingList extends StatelessWidget {
+  const _LoadingList();
+
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
@@ -119,22 +122,13 @@ class _LoadingList extends StatelessWidget {
       separatorBuilder: (_, __) => const SizedBox(height: 12),
       itemBuilder: (context, index) {
         return Shimmer.fromColors(
-          baseColor: Theme.of(context).colorScheme.surfaceContainerHighest,
-          highlightColor: Theme.of(context).colorScheme.surface,
-          child: Card(
-            child: SizedBox(
-              height: 260,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Expanded(child: Container(color: Colors.white)),
-                  Container(
-                    height: 14,
-                    margin: const EdgeInsets.all(14),
-                    color: Colors.white,
-                  ),
-                ],
-              ),
+          baseColor: AppColors.sand,
+          highlightColor: AppColors.surface,
+          child: Container(
+            height: 260,
+            decoration: BoxDecoration(
+              color: AppColors.surface,
+              borderRadius: BorderRadius.circular(16),
             ),
           ),
         );

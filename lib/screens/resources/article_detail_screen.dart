@@ -1,6 +1,8 @@
 import 'package:app/config/app_strings.dart';
+import 'package:app/config/app_theme.dart';
 import 'package:app/data/repositories/article_repository.dart';
 import 'package:app/models/article.dart';
+import 'package:app/widgets/app_background.dart';
 import 'package:app/widgets/article_card.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
@@ -39,66 +41,67 @@ class _ArticleDetailScreenState extends State<ArticleDetailScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(AppStrings.articleDetail),
-      ),
-      body: FutureBuilder<Article?>(
-        future: _articleFuture,
-        builder: (context, snapshot) {
-          if (snapshot.connectionState == ConnectionState.waiting) {
-            return const Center(child: CircularProgressIndicator());
-          }
+      backgroundColor: Colors.transparent,
+      appBar: AppTheme.gradientAppBar(title: AppStrings.articleDetail),
+      body: AppBackground(
+        child: FutureBuilder<Article?>(
+          future: _articleFuture,
+          builder: (context, snapshot) {
+            if (snapshot.connectionState == ConnectionState.waiting) {
+              return const Center(child: CircularProgressIndicator());
+            }
 
-          final article = snapshot.data;
-          if (article == null) {
-            return const Center(child: Text(AppStrings.error));
-          }
+            final article = snapshot.data;
+            if (article == null) {
+              return const Center(child: Text(AppStrings.error));
+            }
 
-          final formattedDate = _formatDate(article.createdAt);
+            final formattedDate = _formatDate(article.createdAt);
 
-          return SingleChildScrollView(
-            padding: const EdgeInsets.all(16),
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.stretch,
-              children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(16),
-                  child: SizedBox(
-                    height: 220,
-                    child: ArticleImage(
-                      article: article,
-                      heroTag: 'article-image-${article.id}',
+            return SingleChildScrollView(
+              padding: const EdgeInsets.all(16),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
+                children: [
+                  ClipRRect(
+                    borderRadius: BorderRadius.circular(16),
+                    child: SizedBox(
+                      height: 220,
+                      child: ArticleImage(
+                        article: article,
+                        heroTag: 'article-image-${article.id}',
+                      ),
                     ),
                   ),
-                ),
-                const SizedBox(height: 16),
-                Text(
-                  article.title,
-                  style: Theme.of(context).textTheme.headlineSmall?.copyWith(
-                        fontWeight: FontWeight.bold,
-                      ),
-                ),
-                if (formattedDate != null) ...[
-                  const SizedBox(height: 8),
+                  const SizedBox(height: 16),
                   Text(
-                    formattedDate,
-                    style: Theme.of(context).textTheme.bodyMedium?.copyWith(
-                          color:
-                              Theme.of(context).colorScheme.onSurfaceVariant,
+                    article.title,
+                    style: Theme.of(context).textTheme.headlineSmall?.copyWith(
+                          fontWeight: FontWeight.bold,
+                          color: AppColors.textDark,
+                        ),
+                  ),
+                  if (formattedDate != null) ...[
+                    const SizedBox(height: 8),
+                    Text(
+                      formattedDate,
+                      style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                            color: AppColors.textMuted,
+                          ),
+                    ),
+                  ],
+                  const SizedBox(height: 16),
+                  Text(
+                    article.body,
+                    style: Theme.of(context).textTheme.bodyLarge?.copyWith(
+                          height: 1.6,
                         ),
                   ),
                 ],
-                const SizedBox(height: 16),
-                Text(
-                  article.body,
-                  style: Theme.of(context).textTheme.bodyLarge?.copyWith(
-                        height: 1.6,
-                      ),
-                ),
-              ],
-            ),
-          );
-        },
+              ),
+            );
+          },
+        ),
       ),
     );
   }

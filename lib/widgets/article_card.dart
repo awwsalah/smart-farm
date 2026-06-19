@@ -1,4 +1,5 @@
 import 'package:app/config/app_strings.dart';
+import 'package:app/config/app_theme.dart';
 import 'package:app/models/article.dart';
 import 'package:app/widgets/optimized_asset_image.dart';
 import 'package:app/widgets/pressable_scale.dart';
@@ -29,14 +30,14 @@ class ArticleCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return PressableScale(
       onTap: onTap,
-      child: Card(
+      child: Container(
+        decoration: AppTheme.softCardDecoration(),
         clipBehavior: Clip.antiAlias,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(
               height: 160,
@@ -54,25 +55,29 @@ class ArticleCard extends StatelessWidget {
                     article.title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.titleMedium?.copyWith(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w600,
+                      color: AppColors.textDark,
+                      fontSize: 16,
                     ),
                   ),
                   if (_formattedDate != null) ...[
                     const SizedBox(height: 6),
                     Text(
                       _formattedDate!,
-                      style: theme.textTheme.labelMedium?.copyWith(
-                        color: theme.colorScheme.onSurfaceVariant,
+                      style: const TextStyle(
+                        color: AppColors.textMuted,
+                        fontSize: 13,
                       ),
                     ),
                   ],
                   const SizedBox(height: 8),
-                  Text(
+                  const Text(
                     AppStrings.readMore,
-                    style: theme.textTheme.labelLarge?.copyWith(
-                      color: theme.colorScheme.primary,
+                    style: TextStyle(
+                      color: AppColors.primary,
                       fontWeight: FontWeight.w600,
+                      fontSize: 14,
                     ),
                   ),
                 ],
@@ -120,12 +125,12 @@ class ArticleImage extends StatelessWidget {
 
   Widget _placeholder(BuildContext context) {
     return ColoredBox(
-      color: Theme.of(context).colorScheme.surfaceContainerHighest,
+      color: AppColors.sand,
       child: Center(
         child: Icon(
           Icons.menu_book_outlined,
           size: 48,
-          color: Theme.of(context).colorScheme.primary,
+          color: AppColors.primary.withValues(alpha: 0.7),
         ),
       ),
     );

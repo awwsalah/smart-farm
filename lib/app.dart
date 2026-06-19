@@ -7,6 +7,7 @@ import 'package:app/screens/home/home_screen.dart';
 import 'package:app/screens/marketplace/marketplace_screen.dart';
 import 'package:app/screens/news/news_screen.dart';
 import 'package:app/screens/resources/resources_screen.dart';
+import 'package:app/widgets/app_background.dart';
 import 'package:app/widgets/offline_banner.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
@@ -87,27 +88,30 @@ class _MainShellState extends State<_MainShell> with WidgetsBindingObserver {
         : const Duration(milliseconds: 280);
 
     return Scaffold(
-      body: Column(
-        children: [
-          const OfflineBanner(),
-          Expanded(
-            child: AnimatedSwitcher(
-              duration: duration,
-              switchInCurve: Curves.easeOut,
-              switchOutCurve: Curves.easeIn,
-              transitionBuilder: (child, animation) {
-                return FadeTransition(
-                  opacity: animation,
-                  child: child,
-                );
-              },
-              child: KeyedSubtree(
-                key: ValueKey<int>(_selectedIndex),
-                child: _screens[_selectedIndex],
+      backgroundColor: Colors.transparent,
+      body: AppBackground(
+        child: Column(
+          children: [
+            const OfflineBanner(),
+            Expanded(
+              child: AnimatedSwitcher(
+                duration: duration,
+                switchInCurve: Curves.easeOut,
+                switchOutCurve: Curves.easeIn,
+                transitionBuilder: (child, animation) {
+                  return FadeTransition(
+                    opacity: animation,
+                    child: child,
+                  );
+                },
+                child: KeyedSubtree(
+                  key: ValueKey<int>(_selectedIndex),
+                  child: _screens[_selectedIndex],
+                ),
               ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
       bottomNavigationBar: NavigationBar(
         selectedIndex: _selectedIndex,

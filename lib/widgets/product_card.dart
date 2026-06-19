@@ -1,4 +1,5 @@
 import 'package:app/config/app_strings.dart';
+import 'package:app/config/app_theme.dart';
 import 'package:app/models/product.dart';
 import 'package:app/widgets/optimized_asset_image.dart';
 import 'package:app/widgets/pressable_scale.dart';
@@ -21,23 +22,24 @@ class ProductCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return PressableScale(
       onTap: onTap,
-      child: Card(
+      child: Container(
+        decoration: AppTheme.softCardDecoration(),
         clipBehavior: Clip.antiAlias,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
           children: [
-            Expanded(
+            AspectRatio(
+              aspectRatio: 1.2,
               child: ProductImage(
                 product: product,
                 heroTag: heroTag,
               ),
             ),
             Padding(
-              padding: const EdgeInsets.all(12),
+              padding: const EdgeInsets.fromLTRB(10, 8, 10, 10),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -45,24 +47,29 @@ class ProductCard extends StatelessWidget {
                     product.name,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.titleSmall?.copyWith(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w600,
+                      color: AppColors.textDark,
+                      fontSize: 13,
                     ),
                   ),
-                  const SizedBox(height: 6),
+                  const SizedBox(height: 4),
                   Text(
                     _priceLabel,
-                    style: theme.textTheme.titleMedium?.copyWith(
-                      color: theme.colorScheme.primary,
+                    style: const TextStyle(
+                      color: AppColors.primary,
                       fontWeight: FontWeight.bold,
+                      fontSize: 14,
                     ),
                   ),
                   if (!product.inStock) ...[
                     const SizedBox(height: 4),
                     Text(
                       AppStrings.outOfStock,
-                      style: theme.textTheme.labelSmall?.copyWith(
-                        color: theme.colorScheme.error,
+                      style: TextStyle(
+                        color: Theme.of(context).colorScheme.error,
+                        fontSize: 11,
+                        fontWeight: FontWeight.w500,
                       ),
                     ),
                   ],
@@ -115,12 +122,12 @@ class ProductImage extends StatelessWidget {
 
   Widget _placeholder(BuildContext context) {
     return ColoredBox(
-      color: Theme.of(context).colorScheme.surfaceContainerHighest,
+      color: AppColors.sand,
       child: Center(
         child: Icon(
           Icons.agriculture,
           size: 40,
-          color: Theme.of(context).colorScheme.primary,
+          color: AppColors.primary.withValues(alpha: 0.7),
         ),
       ),
     );

@@ -1,4 +1,5 @@
 import 'package:app/config/app_strings.dart';
+import 'package:app/config/app_theme.dart';
 import 'package:app/models/news_item.dart';
 import 'package:app/widgets/optimized_asset_image.dart';
 import 'package:app/widgets/pressable_scale.dart';
@@ -29,14 +30,14 @@ class NewsCard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-
     return PressableScale(
       onTap: onTap,
-      child: Card(
+      child: Container(
+        decoration: AppTheme.softCardDecoration(),
         clipBehavior: Clip.antiAlias,
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
+          mainAxisSize: MainAxisSize.min,
           children: [
             SizedBox(
               height: 180,
@@ -54,8 +55,10 @@ class NewsCard extends StatelessWidget {
                     item.title,
                     maxLines: 2,
                     overflow: TextOverflow.ellipsis,
-                    style: theme.textTheme.titleMedium?.copyWith(
+                    style: const TextStyle(
                       fontWeight: FontWeight.w600,
+                      color: AppColors.textDark,
+                      fontSize: 16,
                     ),
                   ),
                   if (item.summary != null && item.summary!.isNotEmpty) ...[
@@ -64,8 +67,9 @@ class NewsCard extends StatelessWidget {
                       item.summary!,
                       maxLines: 3,
                       overflow: TextOverflow.ellipsis,
-                      style: theme.textTheme.bodyMedium?.copyWith(
-                        color: theme.colorScheme.onSurfaceVariant,
+                      style: const TextStyle(
+                        color: AppColors.textMuted,
+                        fontSize: 14,
                       ),
                     ),
                   ],
@@ -78,8 +82,9 @@ class NewsCard extends StatelessWidget {
                             '${AppStrings.newsSource}: ${item.source}',
                             maxLines: 1,
                             overflow: TextOverflow.ellipsis,
-                            style: theme.textTheme.labelMedium?.copyWith(
-                              color: theme.colorScheme.primary,
+                            style: const TextStyle(
+                              color: AppColors.primary,
+                              fontSize: 13,
                             ),
                           ),
                         ),
@@ -88,18 +93,20 @@ class NewsCard extends StatelessWidget {
                       if (_formattedDate != null)
                         Text(
                           _formattedDate!,
-                          style: theme.textTheme.labelMedium?.copyWith(
-                            color: theme.colorScheme.onSurfaceVariant,
+                          style: const TextStyle(
+                            color: AppColors.textMuted,
+                            fontSize: 13,
                           ),
                         ),
                     ],
                   ),
                   const SizedBox(height: 6),
-                  Text(
+                  const Text(
                     AppStrings.readMore,
-                    style: theme.textTheme.labelLarge?.copyWith(
-                      color: theme.colorScheme.primary,
+                    style: TextStyle(
+                      color: AppColors.primary,
                       fontWeight: FontWeight.w600,
+                      fontSize: 14,
                     ),
                   ),
                 ],
@@ -147,12 +154,12 @@ class NewsImage extends StatelessWidget {
 
   Widget _placeholder(BuildContext context) {
     return ColoredBox(
-      color: Theme.of(context).colorScheme.surfaceContainerHighest,
+      color: AppColors.sand,
       child: Center(
         child: Icon(
           Icons.newspaper_outlined,
           size: 48,
-          color: Theme.of(context).colorScheme.primary,
+          color: AppColors.primary.withValues(alpha: 0.7),
         ),
       ),
     );

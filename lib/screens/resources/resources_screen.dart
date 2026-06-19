@@ -1,4 +1,5 @@
 import 'package:app/config/app_strings.dart';
+import 'package:app/config/app_theme.dart';
 import 'package:app/config/article_categories.dart';
 import 'package:app/data/repositories/article_repository.dart';
 import 'package:app/models/article.dart';
@@ -61,9 +62,8 @@ class _ResourcesScreenState extends State<ResourcesScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(AppStrings.navResources),
-      ),
+      backgroundColor: Colors.transparent,
+      appBar: AppTheme.gradientAppBar(title: AppStrings.navResources),
       body: Column(
         crossAxisAlignment: CrossAxisAlignment.stretch,
         children: [
@@ -91,7 +91,7 @@ class _ResourcesScreenState extends State<ResourcesScreen> {
               future: _articlesFuture,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return _LoadingList();
+                  return const _LoadingList();
                 }
 
                 if (snapshot.hasError) {
@@ -132,6 +132,8 @@ class _ResourcesScreenState extends State<ResourcesScreen> {
 }
 
 class _LoadingList extends StatelessWidget {
+  const _LoadingList();
+
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
@@ -140,22 +142,13 @@ class _LoadingList extends StatelessWidget {
       separatorBuilder: (_, __) => const SizedBox(height: 12),
       itemBuilder: (context, index) {
         return Shimmer.fromColors(
-          baseColor: Theme.of(context).colorScheme.surfaceContainerHighest,
-          highlightColor: Theme.of(context).colorScheme.surface,
-          child: Card(
-            child: SizedBox(
-              height: 220,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.stretch,
-                children: [
-                  Expanded(child: Container(color: Colors.white)),
-                  Container(
-                    height: 14,
-                    margin: const EdgeInsets.all(14),
-                    color: Colors.white,
-                  ),
-                ],
-              ),
+          baseColor: AppColors.sand,
+          highlightColor: AppColors.surface,
+          child: Container(
+            height: 220,
+            decoration: BoxDecoration(
+              color: AppColors.surface,
+              borderRadius: BorderRadius.circular(16),
             ),
           ),
         );

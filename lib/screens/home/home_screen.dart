@@ -1,4 +1,5 @@
 import 'package:app/config/app_strings.dart';
+import 'package:app/config/app_theme.dart';
 import 'package:app/data/repositories/article_repository.dart';
 import 'package:app/data/repositories/product_repository.dart';
 import 'package:app/data/repositories/tips_repository.dart';
@@ -10,8 +11,8 @@ import 'package:app/screens/marketplace/product_detail_screen.dart';
 import 'package:app/screens/resources/article_detail_screen.dart';
 import 'package:app/screens/support/support_screen.dart';
 import 'package:app/widgets/empty_state.dart';
-import 'package:app/widgets/home_product_tile.dart';
 import 'package:app/widgets/pressable_scale.dart';
+import 'package:app/widgets/product_card.dart';
 import 'package:app/widgets/staggered_entrance.dart';
 import 'package:app/widgets/tip_card.dart';
 import 'package:app/widgets/weather_card.dart';
@@ -124,11 +125,11 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(AppStrings.navHome),
-      ),
+      backgroundColor: Colors.transparent,
+      appBar: AppTheme.gradientAppBar(title: AppStrings.navHome),
       body: RefreshIndicator(
         onRefresh: _refresh,
+        color: AppColors.primary,
         child: ListView(
           physics: const AlwaysScrollableScrollPhysics(),
           padding: const EdgeInsets.all(16),
@@ -139,6 +140,7 @@ class _HomeScreenState extends State<HomeScreen> {
               AppStrings.latestTips,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w600,
+                    color: AppColors.textDark,
                   ),
             ),
             const SizedBox(height: 12),
@@ -148,7 +150,7 @@ class _HomeScreenState extends State<HomeScreen> {
                 future: _tipsFuture,
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return _HorizontalShimmer();
+                    return _HorizontalShimmer(cardWidth: 260, cardHeight: 150);
                   }
                   final tips = snapshot.data ?? [];
                   if (tips.isEmpty) {
@@ -189,16 +191,17 @@ class _HomeScreenState extends State<HomeScreen> {
               AppStrings.popularProducts,
               style: Theme.of(context).textTheme.titleMedium?.copyWith(
                     fontWeight: FontWeight.w600,
+                    color: AppColors.textDark,
                   ),
             ),
             const SizedBox(height: 12),
             SizedBox(
-              height: 190,
+              height: 230,
               child: FutureBuilder<List<Product>>(
                 future: _productsFuture,
                 builder: (context, snapshot) {
                   if (snapshot.connectionState == ConnectionState.waiting) {
-                    return _HorizontalShimmer();
+                    return _HorizontalShimmer(cardWidth: 160, cardHeight: 230);
                   }
                   final products = snapshot.data ?? [];
                   if (products.isEmpty) {
@@ -215,9 +218,12 @@ class _HomeScreenState extends State<HomeScreen> {
                       final product = products[index];
                       return StaggeredEntrance(
                         index: index,
-                        child: HomeProductTile(
-                          product: product,
-                          onTap: () => _openProduct(product),
+                        child: SizedBox(
+                          width: 160,
+                          child: ProductCard(
+                            product: product,
+                            onTap: () => _openProduct(product),
+                          ),
                         ),
                       );
                     },
@@ -234,6 +240,14 @@ class _HomeScreenState extends State<HomeScreen> {
 }
 
 class _HorizontalShimmer extends StatelessWidget {
+  const _HorizontalShimmer({
+    required this.cardWidth,
+    required this.cardHeight,
+  });
+
+  final double cardWidth;
+  final double cardHeight;
+
   @override
   Widget build(BuildContext context) {
     return ListView.separated(
@@ -242,12 +256,13 @@ class _HorizontalShimmer extends StatelessWidget {
       separatorBuilder: (_, __) => const SizedBox(width: 12),
       itemBuilder: (context, index) {
         return Shimmer.fromColors(
-          baseColor: Theme.of(context).colorScheme.surfaceContainerHighest,
-          highlightColor: Theme.of(context).colorScheme.surface,
+          baseColor: AppColors.sand,
+          highlightColor: AppColors.surface,
           child: Container(
-            width: 150,
+            width: cardWidth,
+            height: cardHeight,
             decoration: BoxDecoration(
-              color: Colors.white,
+              color: AppColors.surface,
               borderRadius: BorderRadius.circular(16),
             ),
           ),

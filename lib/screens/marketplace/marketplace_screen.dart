@@ -1,4 +1,5 @@
 import 'package:app/config/app_strings.dart';
+import 'package:app/config/app_theme.dart';
 import 'package:app/config/product_categories.dart';
 import 'package:app/data/repositories/product_repository.dart';
 import 'package:app/models/product.dart';
@@ -81,8 +82,9 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
     final cartCount = context.watch<CartProvider>().itemCount;
 
     return Scaffold(
-      appBar: AppBar(
-        title: const Text(AppStrings.navMarket),
+      backgroundColor: Colors.transparent,
+      appBar: AppTheme.gradientAppBar(
+        title: AppStrings.navMarket,
         actions: [
           CartBadgeIcon(
             count: cartCount,
@@ -117,18 +119,18 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
               future: _productsFuture,
               builder: (context, snapshot) {
                 if (snapshot.connectionState == ConnectionState.waiting) {
-                  return _LoadingGrid();
+                  return const _LoadingGrid();
                 }
 
                 if (snapshot.hasError) {
-                  return Center(
+                  return const Center(
                     child: Text(AppStrings.error),
                   );
                 }
 
                 final products = snapshot.data ?? [];
                 if (products.isEmpty) {
-                  return Center(
+                  return const Center(
                     child: Text(AppStrings.emptyProducts),
                   );
                 }
@@ -146,10 +148,13 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
                     final product = products[index];
                     return StaggeredEntrance(
                       index: index,
-                      child: ProductCard(
-                        product: product,
-                        heroTag: 'product-image-${product.id}',
-                        onTap: () => _openProductDetail(product),
+                      child: Align(
+                        alignment: Alignment.topCenter,
+                        child: ProductCard(
+                          product: product,
+                          heroTag: 'product-image-${product.id}',
+                          onTap: () => _openProductDetail(product),
+                        ),
                       ),
                     );
                   },
@@ -164,6 +169,8 @@ class _MarketplaceScreenState extends State<MarketplaceScreen> {
 }
 
 class _LoadingGrid extends StatelessWidget {
+  const _LoadingGrid();
+
   @override
   Widget build(BuildContext context) {
     return GridView.builder(
@@ -177,28 +184,12 @@ class _LoadingGrid extends StatelessWidget {
       itemCount: 6,
       itemBuilder: (context, index) {
         return Shimmer.fromColors(
-          baseColor: Theme.of(context).colorScheme.surfaceContainerHighest,
-          highlightColor: Theme.of(context).colorScheme.surface,
-          child: Card(
-            child: Column(
-              children: [
-                Expanded(
-                  child: Container(color: Colors.white),
-                ),
-                const SizedBox(height: 12),
-                Container(
-                  height: 12,
-                  margin: const EdgeInsets.symmetric(horizontal: 12),
-                  color: Colors.white,
-                ),
-                const SizedBox(height: 8),
-                Container(
-                  height: 12,
-                  width: 60,
-                  margin: const EdgeInsets.only(left: 12, bottom: 12),
-                  color: Colors.white,
-                ),
-              ],
+          baseColor: AppColors.sand,
+          highlightColor: AppColors.surface,
+          child: Container(
+            decoration: BoxDecoration(
+              color: AppColors.surface,
+              borderRadius: BorderRadius.circular(16),
             ),
           ),
         );
